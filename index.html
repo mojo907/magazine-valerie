@@ -207,8 +207,11 @@
   .pomy .grille { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
   .pomy p { color: #E3F3EA; }
   .planche { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; background: var(--blanc); padding: 8px; border-radius: 6px; transform: rotate(-1.5deg); box-shadow: 0 30px 60px -30px rgba(0,0,0,.5); }
-  .planche img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 40%; transition: transform .3s ease; }
-  .planche img:hover { transform: scale(1.04) rotate(1deg); }
+  .planche img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 40%; }
+  /* Sérigraphie façon Warhol : recadrage serré, puis 4 aplats (encre + 3 couleurs) par filtre SVG */
+  .pop { overflow: hidden; aspect-ratio: 3 / 4; background: var(--encre); transition: transform .3s ease; }
+  .pop:hover { transform: scale(1.04) rotate(1deg); }
+  .pop img { transform: scale(1.9); transform-origin: var(--o, 30% 36%); filter: var(--f); }
   .reve { margin-top: clamp(56px, 8vw, 112px); }
   .reve .citation { color: var(--blanc); max-width: 58rem; }
   .reve .citation::before, .reve .citation::after { color: var(--chartreuse); }
@@ -483,13 +486,21 @@
         <p>Elle s'installe à Yverdon-les-Bains en 2007, puis à Pomy en 2013, au calme.</p>
         <p class="dit" style="font-size:1.4rem;line-height:1.3;color:var(--blanc)">«&nbsp;La Suisse n'est pas un pays de tradition verrière, donc je trouvais que ça valait vraiment la peine d'arriver avec ces compétences ici. Et je ne voulais pas faire des petits canards pour les touristes.&nbsp;»</p>
       </div>
-      <div class="planche r" aria-label="Planche contact : Valérie devant son four">
-        <img src="img/portrait-9141.jpg" alt="Valérie devant le four rouge, souriante" loading="lazy">
-        <img src="img/portrait-9142.jpg" alt="Valérie, une main sur la hanche" loading="lazy">
-        <img src="img/portrait-9143.jpg" alt="Valérie, lunettes relevées" loading="lazy">
-        <img src="img/portrait-9144.jpg" alt="Valérie, le regard ailleurs" loading="lazy">
-        <img src="img/portrait-9145.jpg" alt="Valérie, en appui contre le four" loading="lazy">
-        <img src="img/portrait-9146.jpg" alt="Valérie, en riant" loading="lazy">
+      <svg width="0" height="0" style="position: absolute" aria-hidden="true"><defs>
+        <filter id="pop9141" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="linear" slope="1.5" intercept="-.22"/><feFuncG type="linear" slope="1.5" intercept="-.22"/><feFuncB type="linear" slope="1.5" intercept="-.22"/></feComponentTransfer><feComponentTransfer><feFuncR type="discrete" tableValues="0.055 0.886 0.965 0.804"/><feFuncG type="discrete" tableValues="0.071 0.212 0.702 0.902"/><feFuncB type="discrete" tableValues="0.188 0.122 0.776 0.239"/></feComponentTransfer></filter>
+        <filter id="pop9142" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="linear" slope="1.5" intercept="-.22"/><feFuncG type="linear" slope="1.5" intercept="-.22"/><feFuncB type="linear" slope="1.5" intercept="-.22"/></feComponentTransfer><feComponentTransfer><feFuncR type="discrete" tableValues="0.055 0.118 0.949 0.965"/><feFuncG type="discrete" tableValues="0.071 0.235 0.635 0.702"/><feFuncB type="discrete" tableValues="0.188 0.824 0.173 0.776"/></feComponentTransfer></filter>
+        <filter id="pop9143" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="linear" slope="1.5" intercept="-.22"/><feFuncG type="linear" slope="1.5" intercept="-.22"/><feFuncB type="linear" slope="1.5" intercept="-.22"/></feComponentTransfer><feComponentTransfer><feFuncR type="discrete" tableValues="0.055 0.055 0.804 0.949"/><feFuncG type="discrete" tableValues="0.071 0.478 0.902 0.635"/><feFuncB type="discrete" tableValues="0.188 0.337 0.239 0.173"/></feComponentTransfer></filter>
+        <filter id="pop9144" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="linear" slope="1.5" intercept="-.22"/><feFuncG type="linear" slope="1.5" intercept="-.22"/><feFuncB type="linear" slope="1.5" intercept="-.22"/></feComponentTransfer><feComponentTransfer><feFuncR type="discrete" tableValues="0.055 0.886 0.949 0.118"/><feFuncG type="discrete" tableValues="0.071 0.212 0.635 0.235"/><feFuncB type="discrete" tableValues="0.188 0.122 0.173 0.824"/></feComponentTransfer></filter>
+        <filter id="pop9145" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="linear" slope="1.5" intercept="-.22"/><feFuncG type="linear" slope="1.5" intercept="-.22"/><feFuncB type="linear" slope="1.5" intercept="-.22"/></feComponentTransfer><feComponentTransfer><feFuncR type="discrete" tableValues="0.055 0.965 0.804 0.118"/><feFuncG type="discrete" tableValues="0.071 0.702 0.902 0.235"/><feFuncB type="discrete" tableValues="0.188 0.776 0.239 0.824"/></feComponentTransfer></filter>
+        <filter id="pop9146" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="linear" slope="1.5" intercept="-.22"/><feFuncG type="linear" slope="1.5" intercept="-.22"/><feFuncB type="linear" slope="1.5" intercept="-.22"/></feComponentTransfer><feComponentTransfer><feFuncR type="discrete" tableValues="0.055 0.949 0.965 0.055"/><feFuncG type="discrete" tableValues="0.071 0.635 0.702 0.478"/><feFuncB type="discrete" tableValues="0.188 0.173 0.776 0.337"/></feComponentTransfer></filter>
+      </defs></svg>
+      <div class="planche r" aria-label="Planche contact : Valérie devant son four, façon sérigraphie">
+        <div class="pop" style="--o: 31% 34%; --f: url(#pop9141)"><img src="img/portrait-9141.jpg" alt="Valérie devant le four rouge, souriante" loading="lazy"></div>
+        <div class="pop" style="--o: 33% 35%; --f: url(#pop9142)"><img src="img/portrait-9142.jpg" alt="Valérie, une main sur la hanche" loading="lazy"></div>
+        <div class="pop" style="--o: 23% 35%; --f: url(#pop9143)"><img src="img/portrait-9143.jpg" alt="Valérie, lunettes relevées" loading="lazy"></div>
+        <div class="pop" style="--o: 30% 37%; --f: url(#pop9144)"><img src="img/portrait-9144.jpg" alt="Valérie, le regard ailleurs" loading="lazy"></div>
+        <div class="pop" style="--o: 28% 37%; --f: url(#pop9145)"><img src="img/portrait-9145.jpg" alt="Valérie, en appui contre le four" loading="lazy"></div>
+        <div class="pop" style="--o: 33% 38%; --f: url(#pop9146)"><img src="img/portrait-9146.jpg" alt="Valérie, en riant" loading="lazy"></div>
       </div>
     </div>
     <div class="reve r">
